@@ -124,12 +124,12 @@
   .payers .head h2{font-size:clamp(32px,4vw,44px);color:#fff}
   .payers .eyebrow{color:var(--gold-light)}.payers .eyebrow::before{background:var(--gold-light)}
   .payers p.sub{color:#f3d9d3;margin-top:8px}
-  .payer-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:28px}
+  .payer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
   .payer{background:#fff;color:var(--ink);border-radius:14px;min-height:92px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:transform .3s,box-shadow .3s}
   .payer:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(0,0,0,.28)}
   .payer b{font-size:15px;line-height:1.15}
   .payer small{font-size:11px;color:var(--muted);margin-top:4px}
-  .payer.a b{color:#1f7a4d}.payer.b b{color:#0a5aa8}.payer.c b{color:#b3182e}.payer.d b{color:#7a2f9e;font-size:22px;text-transform:lowercase}.payer.e b{color:#1c3f8f;font-size:18px}.payer.f b{color:#b3182e;font-size:18px}
+  .payer.a b{color:#1f7a4d}.payer.b b{color:#0a5aa8}.payer.c b{color:#b3182e}.payer.d b{color:#7a2f9e;font-size:22px;text-transform:lowercase}.payer.e b{color:#1c3f8f;font-size:18px}.payer.f b{color:#b3182e;font-size:18px}.payer.g b{color:#9a1023;font-size:18px}.payer.h b{color:#0a4a9a;font-size:15px}
 
   /* about */
   .about-grid{display:grid;grid-template-columns:1.1fr 1fr .8fr;gap:34px;align-items:center}
@@ -405,17 +405,19 @@
       <div class="rv">
         <p class="eyebrow">Programs &amp; Payers Accepted</p>
         <h2>Making Care More Accessible</h2>
-        <p class="sub">We work with a variety of programs to help individuals access the care they need.</p>
+        <p class="sub">We work with a variety of programs and payment options to help individuals access the care they need.</p>
       </div>
       <button class="btn btn-white rv" data-open>View All Programs <span class="ar">→</span></button>
     </div>
     <div class="payer-grid">
-      <div class="payer a rv"><b>Pennsylvania</b><small>Health &amp; Wellness</small></div>
+      <div class="payer a rv"><b>PA Health &amp; Wellness</b><small>Pennsylvania Health &amp; Wellness</small></div>
       <div class="payer b rv" style="--d:.06s"><b>Keystone First</b><small>Community HealthChoices</small></div>
       <div class="payer c rv" style="--d:.12s"><b>AmeriHealth Caritas</b><small>Keystone First</small></div>
-      <div class="payer d rv" style="--d:.18s"><b>aetna</b><small>Better Health</small></div>
+      <div class="payer d rv" style="--d:.18s"><b>aetna</b><small>Aetna Better Health®</small></div>
       <div class="payer e rv" style="--d:.24s"><b>ACT 150</b><small>Pennsylvania</small></div>
-      <div class="payer f rv" style="--d:.3s"><b>OBRA</b><small>Waiver support</small></div>
+      <div class="payer f rv" style="--d:.3s"><b>OBRA</b><small>Waiver Support</small></div>
+      <div class="payer g rv" style="--d:.36s"><b>Private Pay</b><small>Flexible care options</small></div>
+      <div class="payer h rv" style="--d:.42s"><b>Community HealthChoices</b><small>Pennsylvania Medicaid</small></div>
     </div>
   </div>
 </section>
@@ -460,15 +462,11 @@
   <div class="marquee" id="marquee">
     <figure><img src="images/band.jpg" alt="A warm embrace" loading="lazy" /><figcaption>Warmth</figcaption></figure>
     <figure><img src="images/walk.jpg" alt="Supported mobility at home" loading="lazy" style="object-position:50% 40%" /><figcaption>Steady support</figcaption></figure>
-    <figure><img src="images/couple.jpg" alt="Loving moment between seniors" loading="lazy" /><figcaption>Affection</figcaption></figure>
-    <figure><img src="images/why.jpg" alt="Seniors holding hands" loading="lazy" /><figcaption>Togetherness</figcaption></figure>
     <figure><img src="images/cta.jpg" alt="Joyful laughter" loading="lazy" /><figcaption>Joy</figcaption></figure>
     <figure><img src="images/companion.jpg" alt="Sharing time together" loading="lazy" /><figcaption>Companionship</figcaption></figure>
     <!-- duplicate set for seamless loop -->
     <figure aria-hidden="true"><img src="images/band.jpg" alt="" loading="lazy" /><figcaption>Warmth</figcaption></figure>
     <figure aria-hidden="true"><img src="images/walk.jpg" alt="" loading="lazy" style="object-position:50% 40%" /><figcaption>Steady support</figcaption></figure>
-    <figure aria-hidden="true"><img src="images/couple.jpg" alt="" loading="lazy" /><figcaption>Affection</figcaption></figure>
-    <figure aria-hidden="true"><img src="images/why.jpg" alt="" loading="lazy" /><figcaption>Togetherness</figcaption></figure>
     <figure aria-hidden="true"><img src="images/cta.jpg" alt="" loading="lazy" /><figcaption>Joy</figcaption></figure>
     <figure aria-hidden="true"><img src="images/companion.jpg" alt="" loading="lazy" /><figcaption>Companionship</figcaption></figure>
   </div>
@@ -482,11 +480,11 @@
     <div class="car rv">
       <button class="arrow l" aria-label="Previous" id="prev">‹</button>
       <div class="track" id="track">
-        <article class="story"><img src="images/av1.jpg" alt="" loading="lazy" style="object-position:30% 30%" /><div><p>“The caregivers are professional, kind and truly care. They have made such a difference in my mom’s daily life.”</p><div class="stars">★★★★★</div><b>Daughter of a Client</b><small>Montgomery County, PA</small></div></article>
-        <article class="story"><img src="images/av2.jpg" alt="" loading="lazy" style="object-position:50% 25%" /><div><p>“ELHC helped me gain more independence and get involved in my community. The support has been amazing.”</p><div class="stars">★★★★★</div><b>Participant</b><small>Philadelphia County, PA</small></div></article>
-        <article class="story"><img src="images/av3.jpg" alt="" loading="lazy" style="object-position:62% 12%" /><div><p>“Dependable, respectful and always on time. We’re so grateful for the support our family receives.”</p><div class="stars">★★★★★</div><b>Family Member</b><small>Chester County, PA</small></div></article>
-        <article class="story"><img src="images/respite.jpg" alt="" loading="lazy" style="object-position:30% 25%" /><div><p>“Their personalized approach made all the difference. Companionship brightened my aunt’s days as much as the daily help.”</p><div class="stars">★★★★★</div><b>Niece of a Client</b><small>Bucks County, PA</small></div></article>
-        <article class="story"><img src="images/cta.jpg" alt="" loading="lazy" style="object-position:15% 30%" /><div><p>“From the first consultation to daily care, the team has been professional, compassionate and attentive to every detail.”</p><div class="stars">★★★★★</div><b>Son of a Client</b><small>Delaware County, PA</small></div></article>
+        <article class="story"><div><p>“The caregivers are professional, kind and truly care. They have made such a difference in my mom’s daily life.”</p><div class="stars">★★★★★</div><b>Daughter of a Client</b><small>Montgomery County, PA</small></div></article>
+        <article class="story"><div><p>“ELHC helped me gain more independence and get involved in my community. The support has been amazing.”</p><div class="stars">★★★★★</div><b>Participant</b><small>Philadelphia County, PA</small></div></article>
+        <article class="story"><div><p>“Dependable, respectful and always on time. We’re so grateful for the support our family receives.”</p><div class="stars">★★★★★</div><b>Family Member</b><small>Chester County, PA</small></div></article>
+        <article class="story"><div><p>“Their personalized approach made all the difference. Companionship brightened my aunt’s days as much as the daily help.”</p><div class="stars">★★★★★</div><b>Niece of a Client</b><small>Bucks County, PA</small></div></article>
+        <article class="story"><div><p>“From the first consultation to daily care, the team has been professional, compassionate and attentive to every detail.”</p><div class="stars">★★★★★</div><b>Son of a Client</b><small>Delaware County, PA</small></div></article>
       </div>
       <button class="arrow r" aria-label="Next" id="next">›</button>
       <div class="dots" id="dots"></div>
@@ -498,8 +496,8 @@
 <section class="cta" id="contact">
   <div class="wrap cta-grid">
     <div class="cta-l rv" id="careers">
-      <h2>Ready to Start Your Care Journey?</h2>
-      <p>Let’s talk about how we can support you or your loved one.</p>
+      <h2>Looking for Care You Can Feel Good About?</h2>
+      <p><em>Let’s talk about the support you or your loved one needs to live safely, comfortably, and confidently at home.</em></p>
       <div class="cta-btns">
         <button class="btn btn-red" data-open>Get Started With Care <span class="ar">→</span></button>
         <button class="btn btn-line" data-open>Refer a Participant</button>
@@ -636,6 +634,5 @@
   $('#form').addEventListener('submit',function(e){e.preventDefault();$('#fnote').textContent='Thank you! Preview only — nothing was sent.'});
 })();
 </script>
-<div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#111;color:#fff;font:600 12px/1 system-ui,sans-serif;text-align:center;padding:8px 10px;opacity:.92;pointer-events:none">DESIGN PREVIEW - not the final site. Contact form is not active. <a href="../" style="color:#ffd78a;pointer-events:auto">All versions</a></div>
 </body>
 </html>
