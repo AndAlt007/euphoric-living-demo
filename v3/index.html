@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Euphoric Living Home Care | Personalized Home Care in Greater Philadelphia</title>
+  <meta name="description" content="Compassionate, personalized home care in Montgomery, Philadelphia, Bucks, Chester, and Delaware counties. Free consultation. Screened, trained caregivers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --burgundy: #8e1238;
+      --burgundy-deep: #5c0c24;
+      --gold: #c6a15a;
+      --gold-bright: #e0c27a;
+      --gold-deep: #9a7430;
+      --cream: #f7f1e6;
+      --cream-soft: #fbf7f0;
+      --ivory: #fffaf3;
+      --ink: #2a1c1a;
+      --muted: #6b5754;
+      --line: rgba(158, 116, 48, 0.22);
+      --shadow: 0 24px 60px rgba(92, 12, 36, 0.10);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Outfit", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream-soft);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      letter-spacing: .18em; text-transform: uppercase;
+      font-size: 12px; font-weight: 600; color: var(--gold-deep);
+    }
+    .eyebrow::before {
+      content: ""; width: 28px; height: 1px; background: var(--gold);
+    }
+    h1, h2, h3, .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+    h1 { font-size: clamp(42px, 6vw, 78px); line-height: .95; font-weight: 600; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(34px, 4.4vw, 56px); line-height: 1.05; font-weight: 600; }
+    h3 { font-size: 26px; font-weight: 600; }
+    .muted { color: var(--muted); }
+    .gold-text { color: var(--gold-deep); }
+    .burgundy { color: var(--burgundy); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 999px; padding: 14px 24px; font-weight: 600; font-size: 15px;
+      border: 1px solid transparent; transition: .25s ease; cursor: pointer;
+    }
+    .btn-gold {
+      background: linear-gradient(180deg, #e8c97a, #c09a45);
+      color: #3a220c; box-shadow: 0 10px 24px rgba(154, 116, 48, .28);
+    }
+    .btn-gold:hover { transform: translateY(-1px); filter: brightness(1.04); }
+    .btn-ghost {
+      background: transparent; border-color: rgba(142,18,56,.28); color: var(--burgundy-deep);
+    }
+    .btn-ghost:hover { background: rgba(142,18,56,.06); }
+    .btn-dark {
+      background: var(--burgundy); color: #fff;
+    }
+    .btn-dark:hover { background: var(--burgundy-deep); }
+
+    header.nav {
+      position: sticky; top: 0; z-index: 40;
+      backdrop-filter: blur(16px);
+      background: rgba(251, 247, 240, .86);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 78px; gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { height: 58px; width: auto; }
+    .brand-name { display: flex; flex-direction: column; line-height: 1.05; }
+    .brand-name strong { font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 600; }
+    .brand-name span { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+    nav.links { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+    nav.links a:hover { color: var(--burgundy); }
+    .menu-btn {
+      display: none; background: none; border: 1px solid var(--line);
+      width: 42px; height: 42px; border-radius: 12px; cursor: pointer;
+    }
+
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 56px 0 72px;
+      background:
+        radial-gradient(900px 420px at 85% -10%, rgba(224,194,122,.28), transparent 60%),
+        radial-gradient(700px 380px at 0% 100%, rgba(142,18,56,.08), transparent 55%),
+        var(--cream-soft);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center;
+    }
+    .hero-copy p.lead { font-size: 18px; max-width: 540px; margin: 22px 0 28px; color: var(--muted); }
+    .hero h1 em { font-style: italic; color: var(--burgundy); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .checks { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 14px; color: var(--muted); }
+    .checks span { display: flex; align-items: center; gap: 8px; }
+    .dot {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(142,18,56,.1); color: var(--burgundy);
+      display: grid; place-items: center; font-size: 11px; font-weight: 700;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, #fff, var(--ivory));
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      padding: 28px 28px 18px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card img { width: 100%; height: auto; object-fit: contain; }
+    .hero-meta {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;
+    }
+    .stat {
+      padding: 14px 16px; border-radius: 16px; background: rgba(198,161,90,.08);
+      border: 1px solid var(--line);
+    }
+    .stat b { display: block; font-family: "Cormorant Garamond", serif; font-size: 28px; color: var(--burgundy); }
+    .stat span { font-size: 13px; color: var(--muted); }
+
+    section { padding: 88px 0; }
+    .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+    .about-panel {
+      background: var(--burgundy-deep);
+      color: #f6eadc;
+      border-radius: 32px;
+      padding: 42px 36px;
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-panel::after {
+      content: ""; position: absolute; right: -40px; bottom: -50px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,194,122,.35), transparent 70%);
+    }
+    .about-panel h3 { color: var(--gold-bright); margin-bottom: 12px; }
+    .counties { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .pill {
+      border: 1px solid rgba(224,194,122,.35); color: var(--gold-bright);
+      border-radius: 999px; padding: 6px 12px; font-size: 13px;
+    }
+
+    .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+    .feature {
+      background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 22px;
+    }
+    .feature .icon { font-size: 22px; margin-bottom: 10px; }
+    .feature p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+    .services { background: linear-gradient(180deg, #fffaf3, #f3eadc); }
+    .services-head { max-width: 640px; margin-bottom: 36px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service {
+      background: #fff; border-radius: 24px; padding: 26px 24px 24px;
+      border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(42,28,26,.04);
+    }
+    .service .mark {
+      width: 46px; height: 46px; border-radius: 14px; margin-bottom: 16px;
+      display: grid; place-items: center;
+      background: linear-gradient(180deg, #f3e4c4, #ead3a0);
+      color: var(--burgundy-deep); font-weight: 700;
+    }
+    .service p { color: var(--muted); margin-top: 8px; font-size: 15px; }
+
+    .steps-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+    .step {
+      padding: 24px 20px; border-radius: 22px;
+      background: #fff; border: 1px solid var(--line); position: relative;
+    }
+    .step .n {
+      font-family: "Cormorant Garamond", serif; font-size: 42px; color: var(--gold);
+      line-height: 1; display: block; margin-bottom: 10px;
+    }
+    .step p { color: var(--muted); font-size: 14px; margin-top: 8px; }
+
+    .why { background: var(--burgundy-deep); color: #f7ecdf; }
+    .why h2, .why .eyebrow { color: var(--gold-bright); }
+    .why .eyebrow { color: var(--gold-bright); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 32px; }
+    .why-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(224,194,122,.2);
+      border-radius: 20px; padding: 24px;
+    }
+    .why-card p { color: #e6d4c4; margin-top: 8px; }
+
+    .peace {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center;
+    }
+    .quote-box {
+      background: #fff; border-radius: 28px; padding: 32px;
+      border: 1px solid var(--line); box-shadow: var(--shadow);
+    }
+
+    .stories { background: #fffaf3; }
+    .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+    .story {
+      background: #fff; border-radius: 22px; padding: 26px; border: 1px solid var(--line);
+    }
+    .stars { color: var(--gold-deep); letter-spacing: 2px; margin-bottom: 10px; }
+    .story p { color: var(--muted); }
+
+    .faq-list { margin-top: 28px; display: grid; gap: 10px; }
+    details {
+      background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px;
+    }
+    summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--gold-deep); font-size: 22px; font-weight: 400; }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--muted); margin-top: 10px; }
+
+    .contact { background: linear-gradient(180deg, #f7f1e6, #efe3d0); }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 36px; }
+    form {
+      background: #fff; border-radius: 28px; padding: 28px; border: 1px solid var(--line);
+      display: grid; gap: 12px; box-shadow: var(--shadow);
+    }
+    label { font-size: 13px; font-weight: 600; }
+    input, select, textarea {
+      width: 100%; border: 1px solid var(--line); border-radius: 12px;
+      padding: 12px 14px; font: inherit; background: #fffdf9;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .form-note { font-size: 12px; color: var(--muted); }
+
+    footer {
+      background: #2a1218; color: #eadcc8; padding: 40px 0 28px;
+    }
+    .foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+    .foot small { color: #c3ae98; display: block; margin-top: 8px; }
+    .foot-links { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+
+    @media (max-width: 960px) {
+      nav.links, header .btn { display: none; }
+      .menu-btn { display: grid; place-items: center; }
+      .hero-grid, .split, .peace, .contact-grid, .why-grid { grid-template-columns: 1fr; }
+      .features, .service-grid, .steps-row, .story-grid { grid-template-columns: 1fr 1fr; }
+      .hero { padding-top: 28px; }
+    }
+    @media (max-width: 640px) {
+      .features, .service-grid, .steps-row, .story-grid, .hero-meta { grid-template-columns: 1fr; }
+      .brand img { height: 48px; }
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <img src="logo.jpg" alt="Euphoric Living Home Care logo" />
+        <div class="brand-name">
+          <strong>Euphoric Living</strong>
+          <span>Home Care</span>
+        </div>
+      </a>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#why">Why us</a>
+        <a href="#stories">Stories</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-dark" href="#contact">Get in touch</a>
+      <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.links').style.display = document.querySelector('.links').style.display === 'flex' ? 'none' : 'flex'">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Home care · Greater Philadelphia</p>
+          <h1>Your trusted partner in <em>personalized</em> home care.</h1>
+          <p class="lead">With compassion, professionalism, and a personalized approach, we help individuals of all ages and abilities live comfortably, safely, and independently in their own homes.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#contact">Schedule a free consultation →</a>
+            <a class="btn btn-ghost" href="#services">Explore services</a>
+          </div>
+          <div class="checks">
+            <span><i class="dot">✓</i> Free initial consultation</span>
+            <span><i class="dot">✓</i> Screened, trained caregivers</span>
+            <span><i class="dot">✓</i> Hourly, daily &amp; live-in</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="logo.jpg" alt="Euphoric Living Home Care — wing, heart, and home" />
+          <div class="hero-meta">
+            <div class="stat"><b>5</b><span>counties served</span></div>
+            <div class="stat"><b>Family</b><span>care that feels like home</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap split">
+        <div class="about-panel">
+          <p class="eyebrow">About us</p>
+          <h3>Compassion first.</h3>
+          <p>Care that feels like family — delivered with the professionalism families in Greater Philadelphia can trust.</p>
+          <div class="counties">
+            <span class="pill">Montgomery</span>
+            <span class="pill">Philadelphia</span>
+            <span class="pill">Bucks</span>
+            <span class="pill">Chester</span>
+            <span class="pill">Delaware</span>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Where compassion meets professionalism</p>
+          <h2>A trusted partner in the place people love most.</h2>
+          <p class="muted" style="margin:16px 0 22px">Euphoric Living Home Care provides compassionate, personalized care that empowers individuals to live independently and comfortably at home, and gives their families peace of mind. Our commitment to excellence, respect, and integrity sets us apart.</p>
+          <div class="features">
+            <div class="feature"><div class="icon">♡</div><h3 style="font-size:20px">Personalized plans</h3><p>Built around each client’s needs, goals, and lifestyle.</p></div>
+            <div class="feature"><div class="icon">✦</div><h3 style="font-size:20px">Qualified caregivers</h3><p>Screened, trained, and matched with care.</p></div>
+            <div class="feature"><div class="icon">☼</div><h3 style="font-size:20px">Holistic support</h3><p>Physical, emotional, and social well-being.</p></div>
+            <div class="feature"><div class="icon">⌂</div><h3 style="font-size:20px">Quality care</h3><p>Safety, dignity, and attention to detail.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="services-head">
+          <p class="eyebrow">Our services</p>
+          <h2>Support for every part of the day.</h2>
+          <p class="muted" style="margin-top:12px">Each service is delivered with professionalism, compassion, and attention to detail, so people can live safely and comfortably at home.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service"><div class="mark">01</div><h3>Personal Care Assistance</h3><p>Help with daily tasks like bathing, grooming, dressing, and mobility, so clients keep their independence.</p></article>
+          <article class="service"><div class="mark">02</div><h3>Meal Preparation</h3><p>Nutritious meals tailored to dietary needs and preferences, promoting overall health and wellness.</p></article>
+          <article class="service"><div class="mark">03</div><h3>Medication Reminders</h3><p>Gentle support to stay on track with prescribed medications for better health and well-being.</p></article>
+          <article class="service"><div class="mark">04</div><h3>Companionship Services</h3><p>Friendly, engaging social interaction that reduces isolation and fosters emotional well-being.</p></article>
+          <article class="service"><div class="mark">05</div><h3>Dementia Care</h3><p>Expert care for people with memory-related conditions, protecting their safety, comfort, and dignity.</p></article>
+          <article class="service"><div class="mark">06</div><h3>Palliative Support</h3><p>Compassionate care for individuals and families during challenging times, centered on comfort and peace.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <p class="eyebrow">Getting started</p>
+        <h2>Four simple steps to care you can count on.</h2>
+        <p class="muted" style="margin-top:10px;max-width:560px">Starting care should be simple and stress-free. Here is how it works.</p>
+        <div class="steps-row">
+          <div class="step"><span class="n">01</span><h3>Initial Consultation</h3><p>Contact us for a free consultation where we discuss your needs, preferences, and goals for care.</p></div>
+          <div class="step"><span class="n">02</span><h3>Personalized Care Plan</h3><p>We create a customized plan tailored to your specific requirements and lifestyle.</p></div>
+          <div class="step"><span class="n">03</span><h3>Caregiver Matching</h3><p>We select a trained, compassionate caregiver who fits your needs and personality.</p></div>
+          <div class="step"><span class="n">04</span><h3>Start Care</h3><p>Once everything is in place, your caregiver begins professional, reliable care in your home.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="wrap">
+        <p class="eyebrow">Why choose us</p>
+        <h2>Care that puts comfort and independence first.</h2>
+        <p style="max-width:640px;margin-top:12px;color:#e6d4c4">Our approach is rooted in compassion, professionalism, and a dedication to personalized services you can trust.</p>
+        <div class="why-grid">
+          <div class="why-card"><h3>Personalized care plans</h3><p>Tailored to meet each client’s unique needs and preferences — and reviewed as life changes.</p></div>
+          <div class="why-card"><h3>Experienced caregivers</h3><p>Trained, compassionate, and dedicated to delivering quality care with dignity.</p></div>
+          <div class="why-card"><h3>Holistic approach</h3><p>We focus on physical, emotional, and social well-being to enhance overall quality of life.</p></div>
+          <div class="why-card"><h3>Commitment to excellence</h3><p>The highest standards of safety, respect, and professionalism in every visit.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap peace">
+        <div>
+          <p class="eyebrow">Peace of mind</p>
+          <h2>Because home is where life is most comfortable.</h2>
+          <p class="muted" style="margin:16px 0 24px;max-width:520px">We help people stay in the place they love, surrounded by the things and people that matter to them.</p>
+          <a class="btn btn-gold" href="#contact">Schedule a free consultation</a>
+        </div>
+        <div class="quote-box">
+          <p class="serif" style="font-size:28px;line-height:1.25">“Care that feels like family — with the professionalism families can count on.”</p>
+          <p class="muted" style="margin-top:14px">Serving Montgomery, Philadelphia, Bucks, Chester, and Delaware counties.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stories" id="stories">
+      <div class="wrap">
+        <p class="eyebrow">Client stories</p>
+        <h2>Families, in their own words.</h2>
+        <div class="story-grid">
+          <article class="story"><div class="stars">★★★★★</div><p>The caregivers at Euphoric Living Home Care have been incredible. They treat my mother with such kindness and respect, making her feel comfortable and cared for every day.</p></article>
+          <article class="story"><div class="stars">★★★★★</div><p>From the first consultation to the daily care, the team has been professional, compassionate, and attentive to every detail. I couldn’t ask for better care for my father.</p></article>
+          <article class="story"><div class="stars">★★★★★</div><p>Their personalized approach made all the difference. The caregivers not only helped my aunt with daily tasks but also brightened her days with their companionship.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap" style="max-width:860px">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions, answered.</h2>
+        <p class="muted" style="margin-top:10px">Choosing a home care provider is a big decision. These answers can help you feel confident about it.</p>
+        <div class="faq-list">
+          <details open>
+            <summary>What services do you offer?</summary>
+            <p>Personal care assistance, meal preparation, medication reminders, light housekeeping, companionship, and specialized care like dementia support and palliative care.</p>
+          </details>
+          <details>
+            <summary>How are caregivers selected?</summary>
+            <p>Our caregivers go through a rigorous screening process, including background checks, thorough interviews, and professional training. We also match caregivers based on each client’s needs and preferences.</p>
+          </details>
+          <details>
+            <summary>Do you offer customized care plans?</summary>
+            <p>Yes. We design personalized care plans around each client’s needs, goals, and lifestyle, and we regularly review and adjust them to ensure the best care possible.</p>
+          </details>
+          <details>
+            <summary>What areas do you serve?</summary>
+            <p>We proudly serve Montgomery, Philadelphia, Bucks, Chester, and Delaware counties.</p>
+          </details>
+          <details>
+            <summary>Is there a minimum number of hours required?</summary>
+            <p>No fixed minimum is listed. We offer flexible options, including hourly, daily, and live-in care. Contact us to discuss a schedule that works for you.</p>
+          </details>
+          <details>
+            <summary>Can I make changes to the care plan?</summary>
+            <p>Absolutely. We encourage open communication and are happy to adjust the plan as your needs evolve.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2>Let’s talk about the care your family needs.</h2>
+          <p class="muted" style="margin:16px 0 22px">Have questions or want to schedule a consultation? Send us a message and we’ll respond promptly. Your peace of mind is our priority.</p>
+          <p>✓ Free initial consultation</p>
+          <p>✓ Serving Montgomery, Philadelphia, Bucks, Chester &amp; Delaware counties</p>
+          <p class="muted" style="margin-top:12px">Phone &amp; email: to be added</p>
+        </div>
+        <form onsubmit="event.preventDefault(); this.querySelector('.form-note').textContent = 'Preview only — this form does not send yet. Thank you.';">
+          <label>Name<input type="text" name="name" required placeholder="Your name" /></label>
+          <label>Email<input type="email" name="email" required placeholder="you@email.com" /></label>
+          <label>Phone<input type="tel" name="phone" placeholder="(optional)" /></label>
+          <label>County
+            <select name="county">
+              <option>Montgomery</option>
+              <option>Philadelphia</option>
+              <option>Bucks</option>
+              <option>Chester</option>
+              <option>Delaware</option>
+            </select>
+          </label>
+          <label>How can we help?<textarea name="message" placeholder="Tell us a little about the care you are looking for."></textarea></label>
+          <button class="btn btn-gold" type="submit">Send message</button>
+          <p class="form-note">Preview only: this form does not send yet.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong class="serif" style="font-size:22px">Euphoric Living Home Care</strong>
+        <small>Personalized home care in Greater Philadelphia.</small>
+        <small>© 2026 Euphoric Living Home Care LLC. Design preview.</small>
+      </div>
+      <div class="foot-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#111;color:#fff;font:600 12px/1 system-ui,sans-serif;text-align:center;padding:8px 10px;opacity:.92;pointer-events:none">DESIGN PREVIEW - not the final site. Contact form is not active. <a href="../" style="color:#5cf2c4;pointer-events:auto">All versions</a></div>
+</body>
+</html>

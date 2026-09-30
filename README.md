@@ -2,6 +2,7 @@
 Static HTML design concepts (no build step).
 - `v1/` warm and friendly redesign
 - `v2/` bold, dark, animated redesign
+- `v3/` gold and burgundy redesign built around the logo
 - `original-rebuild/` plain rebuild of the archived homepage text
 
 Preview only: contact form is inactive; phone/email are placeholders. Photos from StockSnap.io (CC0).
