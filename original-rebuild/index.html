@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Euphoric Living Home Care</title>
+<meta name="description" content="Compassionate, personalized home care serving Montgomery, Philadelphia, Bucks, Chester and Delaware counties.">
+<style>
+:root{--ink:#22303c;--muted:#5b6b78;--brand:#2f7f79;--brand-d:#22615c;--soft:#eef6f5;--warm:#fbf7f1;--line:#dde7e6;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3,.nav,.btn,.label{font-family:"Segoe UI",Arial,sans-serif}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.label{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--brand);font-weight:600;margin-bottom:.6em}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+.lead{color:var(--muted);max-width:680px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:12px 24px;border-radius:999px;font-weight:600;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{background:var(--brand-d)}
+.btn.alt{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+header{position:sticky;top:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{font-weight:700;font-size:1.15rem;color:var(--brand-d);text-decoration:none}
+.logo span{color:var(--muted);font-weight:400}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:.95rem}
+.nav ul a:hover{color:var(--brand)}
+.hero{background:linear-gradient(135deg,var(--soft),var(--warm));padding:88px 0}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);max-width:720px}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:640px}
+.hero .btn+.btn{margin-left:10px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:28px}
+.pill{background:var(--soft);border-radius:12px;padding:18px;font-family:"Segoe UI",Arial,sans-serif;font-weight:600;color:var(--brand-d)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-top:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}
+.card h3{font-size:1.15rem;color:var(--brand-d)}
+.card p{color:var(--muted);margin:0}
+.alt-bg{background:var(--warm)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:28px}
+.step{background:#fff;border-radius:14px;padding:26px;border:1px solid var(--line)}
+.step .n{display:inline-flex;width:38px;height:38px;border-radius:50%;background:var(--brand);color:#fff;align-items:center;justify-content:center;font-family:"Segoe UI",Arial,sans-serif;font-weight:700;margin-bottom:12px}
+.quote{border-left:4px solid var(--brand);padding:6px 0 6px 20px}
+.quote p{font-style:italic}
+.quote cite{font-family:"Segoe UI",Arial,sans-serif;font-style:normal;font-weight:600;color:var(--brand-d)}
+details{border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px;background:#fff}
+summary{cursor:pointer;font-family:"Segoe UI",Arial,sans-serif;font-weight:600}
+details p{margin:.8em 0 0;color:var(--muted)}
+form{display:grid;gap:14px;max-width:620px;margin-top:24px}
+input,textarea{font:inherit;padding:12px 14px;border:1px solid #c5d3d2;border-radius:10px;width:100%}
+textarea{min-height:130px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+footer{background:#1d2b34;color:#cfdad9;padding:44px 0 28px;font-family:"Segoe UI",Arial,sans-serif;font-size:.92rem}
+footer .cols{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:6px}
+.fine{border-top:1px solid #33454f;margin-top:28px;padding-top:16px;color:#8fa2a1;font-size:.82rem}
+@media(max-width:720px){.nav ul{display:none}.two{grid-template-columns:1fr}.hero{padding:56px 0}.hero .btn+.btn{margin:10px 0 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Euphoric Living <span>Home Care</span></a>
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#career">Career</a></li>
+    </ul>
+    <a class="btn" href="#contact">Contact Us</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="label">Home care in the Philadelphia area</div>
+    <h1>Your Trusted Partner in Personalized Home Care</h1>
+    <p>At Euphoric Living Home Care, we are dedicated to transforming the way home care services are delivered. With compassion, professionalism, and a personalized approach, we help individuals of all ages and abilities live comfortably, safely, and independently in their own homes.</p>
+    <p><a class="btn" href="#contact">Get in Touch</a><a class="btn alt" href="#services">Our Services</a></p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="label">About Us</div>
+    <h2>Where Compassion Meets Professionalism in Home Care</h2>
+    <p class="lead">Euphoric Living Home Care is dedicated to providing compassionate and personalized care services that empower individuals to live independently and comfortably in their own homes. Serving Montgomery, Philadelphia, Bucks, Chester, and Delaware counties, we focus on enhancing the quality of life for clients while offering peace of mind to their families. Our commitment to excellence, respect, and integrity sets us apart as a trusted partner in home care.</p>
+    <div class="pillars">
+      <div class="pill">Personalized Plans</div>
+      <div class="pill">Qualified Caregivers</div>
+      <div class="pill">Holistic Support</div>
+      <div class="pill">Quality Care</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt-bg">
+  <div class="wrap">
+    <div class="label">What We Do</div>
+    <h2>Our Services</h2>
+    <p class="lead">At Euphoric Living Home Care, we offer a range of services designed to support individuals in living safely and comfortably at home. Each service is delivered with professionalism, compassion, and attention to detail.</p>
+    <div class="grid">
+      <div class="card"><h3>Personal Care Assistance</h3><p>We provide help with daily tasks like bathing, grooming, dressing, and mobility to ensure clients maintain their independence.</p></div>
+      <div class="card"><h3>Meal Preparation</h3><p>Our caregivers prepare nutritious meals tailored to dietary needs and preferences, promoting overall health and wellness.</p></div>
+      <div class="card"><h3>Medication Reminders</h3><p>We help our clients to stay on track with their prescribed medications to support their health and well-being for better living.</p></div>
+      <div class="card"><h3>Companionship Services</h3><p>Friendly and engaging social interactions to reduce feelings of isolation and foster emotional well-being.</p></div>
+      <div class="card"><h3>Dementia Care</h3><p>Expert care for individuals with memory-related conditions, ensuring their safety, comfort, and dignity.</p></div>
+      <div class="card"><h3>Palliative Support</h3><p>Compassionate care for individuals and families during challenging times, focusing on comfort and peace.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="label">Getting Started</div>
+    <h2>How It Works</h2>
+    <p class="lead">At Euphoric Living Home Care, we make starting care services simple and stress-free. Follow these four easy steps to begin your journey with us:</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Initial Consultation</h3><p>Contact us to schedule a free consultation where we’ll discuss your needs, preferences, and goals for care.</p></div>
+      <div class="step"><div class="n">2</div><h3>Personalized Care Plan</h3><p>Based on the consultation, we’ll create a customized care plan tailored to your specific requirements and lifestyle.</p></div>
+      <div class="step"><div class="n">3</div><h3>Caregiver Matching</h3><p>We carefully select a trained and compassionate caregiver who best fits your needs and personality.</p></div>
+      <div class="step"><div class="n">4</div><h3>Start Care</h3><p>Once everything is in place, our caregiver will begin providing professional and reliable care services in your home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="wrap">
+    <div class="label">Why Us</div>
+    <h2>Why Euphoric Living Home Care Is the Right Choice</h2>
+    <p class="lead">We are committed to delivering exceptional care that prioritizes your comfort, independence, and overall well-being. Our approach is rooted in compassion, professionalism, and a dedication to providing personalized services you can trust.</p>
+    <div class="grid">
+      <div class="card"><h3>Personalized Care Plans</h3><p>Tailored to meet each client’s unique needs and preferences.</p></div>
+      <div class="card"><h3>Experienced Caregivers</h3><p>Our team is trained, compassionate, and dedicated to delivering quality care.</p></div>
+      <div class="card"><h3>Holistic Approach</h3><p>We focus on physical, emotional, and social well-being to enhance overall quality of life.</p></div>
+      <div class="card"><h3>Commitment to Excellence</h3><p>We adhere to the highest standards of safety, respect, and professionalism.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="label">Testimonials</div>
+    <h2>Client Testimonials</h2>
+    <p class="lead">We are honored to have made a positive impact on the lives of our clients and their families. Here’s what they have to say about their experience with Euphoric Living Home Care:</p>
+    <div class="grid">
+      <div class="quote"><p>The caregivers at Euphoric Living Home Care have been incredible. They treat my mother with such kindness and respect, making her feel comfortable and cared for every day.</p><cite>— Emily R.</cite></div>
+      <div class="quote"><p>From the first consultation to the daily care, the team has been professional, compassionate, and attentive to every detail. I couldn’t ask for better care for my father.</p><cite>— John T.</cite></div>
+      <div class="quote"><p>Their personalized approach made all the difference. The caregivers not only helped my aunt with daily tasks but also brightened her days with their companionship.</p><cite>— Lisa M.</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="faq">
+  <div class="wrap">
+    <div class="label">FAQ</div>
+    <h2>Frequently Asked Questions</h2>
+    <p class="lead">We understand that choosing the right home care provider is a big decision. Below are answers to some common questions to help you make an informed choice.</p>
+    <div style="margin-top:24px;max-width:780px">
+      <details><summary>What services do you offer?</summary><p>We provide a wide range of services, including personal care assistance, meal preparation, medication reminders, light housekeeping, companionship, and specialized care like dementia support and palliative care.</p></details>
+      <details><summary>How are caregivers selected?</summary><p>Our caregivers undergo a rigorous screening process, including background checks, thorough interviews, and professional training. We also match caregivers based on the client’s needs and preferences.</p></details>
+      <details><summary>Do you offer customized care plans?</summary><p>Yes, we design personalized care plans tailored to each client’s unique needs, goals, and lifestyle. We regularly review and adjust these plans to ensure the best care possible.</p></details>
+      <details><summary>What areas do you serve?</summary><p>We proudly serve Montgomery, Philadelphia, Bucks, Chester, and Delaware counties.</p></details>
+      <details><summary>Is there a minimum number of hours required for care?</summary><p>We offer flexible care options to suit your needs, including hourly, daily, and live-in care. Contact us to discuss a schedule that works for you.</p></details>
+      <details><summary>Can I make changes to the care plan?</summary><p>Absolutely. We encourage open communication and are happy to adjust the care plan as your needs evolve.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="label">Get in Touch</div>
+    <h2>Send Us a Message</h2>
+    <p class="lead">Have questions or need assistance? We’re here to help! Fill out the form below to get in touch with our team. Whether you’re seeking information about our services or looking to schedule a consultation, we’ll respond promptly to address your needs. At Euphoric Living Home Care, your peace of mind is our priority.</p>
+    <!-- Demo form only: no backend yet. Needs a real form handler before launch. -->
+    <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you (demo - not sent)'">
+      <div class="two"><input name="name" placeholder="Your name" required><input name="phone" placeholder="Phone"></div>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="How can we help?"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<section id="blog" class="alt-bg">
+  <div class="wrap">
+    <div class="label">Blog</div>
+    <h2>Blog</h2>
+    <p class="lead">Coming soon. (The original site's blog page was not preserved in the archive.)</p>
+  </div>
+</section>
+
+<section id="career">
+  <div class="wrap">
+    <div class="label">Career</div>
+    <h2>Join Our Team</h2>
+    <p class="lead">The original site had a Career page with an application form; its content was not preserved in the archive. Placeholder until we rebuild it.</p>
+    <a class="btn" href="#contact">Get in Touch</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div style="max-width:340px">
+        <strong style="color:#fff;font-size:1.1rem">Euphoric Living Home Care</strong>
+        <p style="margin-top:.6em">Delivering compassionate and personalized care to enhance your quality of life. Trust us to support you every step of the way.</p>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#career">Career</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><a href="https://www.instagram.com/euphoriclivinghc/">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/CAaGPpDdaoxrEWBn/?mibextid=LQQJ4d">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">Rebuilt from Wayback Machine snapshot of 2025-03-25. Original: © 2024 Euphoric Living Home Care.</div>
+  </div>
+</footer>
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#111;color:#fff;font:600 12px/1 system-ui,sans-serif;text-align:center;padding:8px 10px;opacity:.92;pointer-events:none">DESIGN PREVIEW - not the final site. Contact form is not active. <a href="../" style="color:#5cf2c4;pointer-events:auto">All versions</a></div>
+</body>
+</html>
