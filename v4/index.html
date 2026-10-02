@@ -271,10 +271,10 @@
     .cta-l{padding:44px 0 10px}
     .cta-r{padding:34px 22px;margin:0 -22px;box-shadow:none}
     .foot{grid-template-columns:1fr}
-    .arrow.l{left:-10px}.arrow.r{right:-10px}
     section{padding:62px 0}
   }
   @media (max-width:600px){
+    .arrow{display:none}
     .svc-grid{grid-template-columns:1fr 1fr}
     .payer-grid{grid-template-columns:1fr 1fr}
     .about-grid{grid-template-columns:1fr}
@@ -297,6 +297,14 @@
     *{animation:none!important;transition:none!important}
     .rv{opacity:1;transform:none}
     html{scroll-behavior:auto}
+  }
+  /* testimonial arrows: never overlap card text */
+  @media (min-width:1300px){.arrow.l{left:-60px}.arrow.r{right:-60px}}
+  @media (min-width:601px) and (max-width:1299px){
+    .car{padding-bottom:58px}
+    .arrow{top:auto;bottom:0;width:42px;height:42px}
+    .arrow.l{left:calc(50% - 96px)}.arrow.r{right:calc(50% - 96px)}
+    .dots{position:absolute;left:0;right:0;bottom:16px}
   }
 </style>
 </head>
@@ -358,7 +366,7 @@
   <div class="wrap">
     <div class="stat rv"><b data-count="8">0</b><span>Counties served</span></div>
     <div class="stat rv" style="--d:.08s"><b data-count="6">0</b><span>Core services</span></div>
-    <div class="stat rv" style="--d:.16s"><b data-count="6">0</b><span>Programs accepted</span></div>
+    <div class="stat rv" style="--d:.16s"><b data-count="8">0</b><span>Programs accepted</span></div>
     <div class="stat rv" style="--d:.24s"><b data-count="4">0</b><span>Simple steps to start</span></div>
   </div>
 </div>
