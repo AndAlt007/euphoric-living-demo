@@ -232,6 +232,14 @@
   .dlg textarea{min-height:90px}
   .dlg .x{float:right;background:none;border:0;font-size:26px;color:var(--muted)}
   .note{font-size:12px;color:var(--muted)}
+  dialog{max-height:calc(100vh - 32px);overflow:auto}
+  dialog.wide{width:min(700px,calc(100% - 32px))}
+  .dlg .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .dlg label.f{display:grid;gap:4px;font-size:12px;font-weight:600;color:var(--charcoal)}
+  .dlg label.f small{font-weight:400;color:var(--muted)}
+  .dlg .lead{font-size:14px;color:var(--muted);margin-top:6px}
+  @media (max-width:600px){.dlg{padding:24px 20px}.dlg .row2{grid-template-columns:1fr}}
+
 
   .preview-bar{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#111;color:#fff;font:600 12px/1 system-ui,sans-serif;text-align:center;padding:8px 10px;opacity:.92;pointer-events:none}
   .preview-bar a{color:#ffd78a;pointer-events:auto}
@@ -309,7 +317,7 @@
       <a href="#areas">Contact</a>
     </nav>
     <div class="top-cta">
-      <a class="phone" href="tel:6101234567"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>(610) 123-4567</a>
+      <a class="phone" href="tel:2673691999"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>(267) 369-1999</a>
       <button class="btn btn-red" data-open>Get Started</button>
       <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -334,7 +342,7 @@
       <p class="lead rv" style="--d:.16s">Personalized, non-medical in-home and community-based services that support independence, dignity and a better quality of life — right at home.</p>
       <div class="hero-actions rv" style="--d:.24s">
         <button class="btn btn-red" data-open>Get Started With Care <span class="ar">→</span></button>
-        <button class="btn btn-line" data-open>Refer Someone for Care</button>
+        <button class="btn btn-line" data-open="refer">Refer Someone for Care</button>
       </div>
       <div class="trust rv" style="--d:.32s">
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20s-7-4.4-7-9.6A4 4 0 0 1 12 8a4 4 0 0 1 7 2.4C19 15.6 12 20 12 20z"/></svg>Trusted &amp; Professional</div>
@@ -499,12 +507,11 @@
 <section class="cta" id="contact">
   <div class="wrap cta-grid">
     <div class="cta-l rv" id="careers">
-      <h2>Looking for Care You Can Feel Good About?</h2>
-      <p><em>Let’s talk about the support you or your loved one needs to live safely, comfortably, and confidently at home.</em></p>
+      <h2>Let’s Make Euphoric Living Possible.</h2>
+      <p>The right support can make all the difference. Let’s talk about the care you or your loved one needs to live safely, confidently, and comfortably.</p>
       <div class="cta-btns">
         <button class="btn btn-red" data-open>Get Started With Care <span class="ar">→</span></button>
-        <button class="btn btn-line" data-open>Refer Someone for Care</button>
-        <button class="btn btn-line" data-open>Join Our Team</button>
+        <button class="btn btn-line" data-open="refer">Refer Someone for Care</button>
       </div>
     </div>
     <div class="cta-r rv" id="areas" style="--d:.12s">
@@ -526,12 +533,12 @@
       <div><span class="logochip"><img src="images/logo-footer.png" alt="Euphoric Living Home Care" /></span></div>
       <nav aria-label="Footer"><a href="#home">Home</a><a href="about.html">About Us</a><a href="#services">Our Services</a><a href="#programs">Programs</a><a href="#careers">Careers</a><a href="#process">Resources</a><a href="#contact">Contact</a></nav>
       <div class="ct">
-        <a href="tel:6101234567">☎ (610) 123-4567</a>
+        <a href="tel:2673691999">☎ (267) 369-1999</a>
         <a href="mailto:info@euphoriclivinghc.com">✉ info@euphoriclivinghc.com</a>
         <div class="soc"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a></div>
       </div>
     </div>
-    <p class="fine">© 2026 Euphoric Living Home Care. Design preview — phone, email, payer list and testimonials follow the design mock and are placeholders until confirmed by the owner. Photography: StockSnap.io (CC0).</p>
+    <p class="fine">© 2026 Euphoric Living Home Care. Design preview — email, payer list and testimonials follow the design mock and are placeholders until confirmed by the owner. Photography: StockSnap.io (CC0).</p>
   </div>
 </footer>
 
@@ -544,10 +551,78 @@
       <input name="name" placeholder="Your name" required />
       <input name="phone" type="tel" placeholder="Phone" />
       <input name="email" type="email" placeholder="Email" />
-      <select><option>Start care for a loved one</option><option>Refer someone for care</option><option>Ask about programs / payers</option><option>Join the team</option></select>
-      <textarea placeholder="A few words about how we can help"></textarea>
+      <select name="interest" aria-label="Who needs care / service interest">
+        <option value="">Who needs care? / Service interest</option>
+        <option>Myself — personal assistance (PAS)</option>
+        <option>A parent or loved one — personal assistance (PAS)</option>
+        <option>Respite care for a family caregiver</option>
+        <option>Companion care</option>
+        <option>Homemaker services</option>
+        <option>Community integration</option>
+        <option>Community transition</option>
+        <option>Programs / payers question</option>
+        <option>Not sure yet</option>
+        <option>I’m interested in joining the team</option>
+      </select>
+      <textarea name="message" placeholder="A few words about how we can help"></textarea>
       <button class="btn btn-red" type="submit" style="justify-content:center">Send <span class="ar">→</span></button>
       <p class="note" id="fnote">Preview only — this form does not send yet.</p>
+    </form>
+  </div>
+</dialog>
+
+<dialog id="dlgRef" class="wide">
+  <div class="dlg">
+    <button class="x" aria-label="Close" onclick="document.getElementById('dlgRef').close()">×</button>
+    <h3>Refer Someone for Care</h3>
+    <p class="lead">Tell us a little about the person you’re referring and the support they need. Our team will follow up to discuss next steps.</p>
+    <form id="refForm">
+      <div class="row2">
+        <input name="rname" placeholder="Your name" required />
+        <input name="org" placeholder="Organization / Agency (optional)" />
+      </div>
+      <select name="role" aria-label="Your role" required>
+        <option value="">Your role</option>
+        <option>Care Coordinator</option>
+        <option>Social Worker</option>
+        <option>Family Member</option>
+        <option>Other</option>
+      </select>
+      <div class="row2">
+        <input name="rphone" type="tel" placeholder="Your phone" required />
+        <input name="remail" type="email" placeholder="Your email" required />
+      </div>
+      <div class="row2">
+        <input name="person" placeholder="Person being referred" required />
+        <input name="pphone" type="tel" placeholder="Their phone (if applicable)" />
+      </div>
+      <div class="row2">
+        <input name="county" placeholder="County" />
+        <select name="payer" aria-label="Program or payer">
+          <option value="">Program / Payer</option>
+          <option>PHW (PA Health &amp; Wellness)</option>
+          <option>Keystone First</option>
+          <option>Aetna</option>
+          <option>Act 150</option>
+          <option>OBRA</option>
+          <option>Private Pay</option>
+          <option>Other / Unsure</option>
+        </select>
+      </div>
+      <select name="service" aria-label="Service needed">
+        <option value="">Service needed</option>
+        <option>Personal Assistance Services (PAS)</option>
+        <option>Respite Care</option>
+        <option>Companion Care</option>
+        <option>Homemaker Services</option>
+        <option>Community Integration</option>
+        <option>Community Transition Services (CTS)</option>
+        <option>Not sure / need guidance</option>
+      </select>
+      <input name="hours" placeholder="Requested hours / schedule (optional)" />
+      <textarea name="info" placeholder="Additional information"></textarea>
+      <button class="btn btn-red" type="submit" style="justify-content:center">Submit Referral <span class="ar">→</span></button>
+      <p class="note" id="rnote">Preview only — this form does not send yet.</p>
     </form>
   </div>
 </dialog>
@@ -632,7 +707,10 @@
 
   /* dialog */
   var dlg=$('#dlg');
-  $$('[data-open]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();closeMenu();if(dlg.showModal)dlg.showModal();else location.hash='#contact'})});
+  $$('[data-open]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();closeMenu();var d=document.getElementById(b.dataset.open==='refer'?'dlgRef':'dlg');if(d.showModal)d.showModal()})});
+  var dlgRef=$('#dlgRef');
+  dlgRef.addEventListener('click',function(e){if(e.target===dlgRef)dlgRef.close()});
+  $('#refForm').addEventListener('submit',function(e){e.preventDefault();$('#rnote').textContent='Thank you! Preview only — nothing was sent.'});
   dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
   $('#form').addEventListener('submit',function(e){e.preventDefault();$('#fnote').textContent='Thank you! Preview only — nothing was sent.'});
 })();
