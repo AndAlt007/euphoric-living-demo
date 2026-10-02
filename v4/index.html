@@ -175,6 +175,7 @@
 
   /* testimonials */
   .stories{position:relative;background:linear-gradient(180deg,#fbf3e6,var(--cream));overflow:hidden}
+  .stories .sub{color:var(--muted);margin-top:8px;max-width:640px}
   .stories h2{font-size:clamp(30px,3.8vw,44px);color:var(--charcoal)}
   .car{position:relative;margin-top:30px}
   .track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:8px 4px 24px}
@@ -497,16 +498,14 @@
 <!-- TESTIMONIALS -->
 <section class="stories" id="stories">
   <div class="wrap">
-    <p class="eyebrow rv">Real People. Real Impact.</p>
-    <h2 class="rv">What Families Are Saying</h2>
+    <h2 class="rv">Kind Words From Those We’ve Served</h2>
+    <p class="sub rv">Real experiences. Meaningful relationships. Care that makes a difference.</p>
     <div class="car rv">
       <button class="arrow l" aria-label="Previous" id="prev">‹</button>
       <div class="track" id="track">
-        <article class="story"><div><p>“The caregivers are professional, kind and truly care. They have made such a difference in my mom’s daily life.”</p><div class="stars">★★★★★</div><b>Daughter of a Client</b><small>Montgomery County, PA</small></div></article>
-        <article class="story"><div><p>“ELHC helped me gain more independence and get involved in my community. The support has been amazing.”</p><div class="stars">★★★★★</div><b>Participant</b><small>Philadelphia County, PA</small></div></article>
-        <article class="story"><div><p>“Dependable, respectful and always on time. We’re so grateful for the support our family receives.”</p><div class="stars">★★★★★</div><b>Family Member</b><small>Chester County, PA</small></div></article>
-        <article class="story"><div><p>“Their personalized approach made all the difference. Companionship brightened my aunt’s days as much as the daily help.”</p><div class="stars">★★★★★</div><b>Niece of a Client</b><small>Bucks County, PA</small></div></article>
-        <article class="story"><div><p>“From the first consultation to daily care, the team has been professional, compassionate and attentive to every detail.”</p><div class="stars">★★★★★</div><b>Son of a Client</b><small>Delaware County, PA</small></div></article>
+        <article class="story"><div><p>“The care, love, and support they show my family is remarkable, and it brings us real peace of mind. Their caregivers are compassionate, reliable, and deeply committed to what they do.”</p><div class="stars">★★★★★</div><b>Andre Wright</b></div></article>
+        <article class="story"><div><p>“Their team is compassionate, dependable, and always focused on treating people with dignity and respect. Communication is clear, services are consistent, and you can genuinely tell they care.”</p><div class="stars">★★★★★</div><b>Ashley</b></div></article>
+        <article class="story"><div><p>“From the very beginning, they took the time to understand our needs and created support that felt personal, not ‘one size fits all.’”</p><div class="stars">★★★★★</div><b>Neisha N</b></div></article>
       </div>
       <button class="arrow r" aria-label="Next" id="next">›</button>
       <div class="dots" id="dots"></div>
@@ -707,7 +706,7 @@
   var tr=$('#track'), cards=$$('.story',tr), dots=$('#dots'), idx=0, timer;
   function per(){return innerWidth>1100?3:(innerWidth>600?2:1)}
   function pages(){return Math.max(1,cards.length-per()+1)}
-  function buildDots(){dots.innerHTML='';for(var i=0;i<pages();i++){(function(i){var b=document.createElement('button');b.setAttribute('aria-label','Go to '+(i+1));b.onclick=function(){go(i)};dots.appendChild(b)})(i)}mark()}
+  function buildDots(){dots.innerHTML='';for(var i=0;i<pages();i++){(function(i){var b=document.createElement('button');b.setAttribute('aria-label','Go to '+(i+1));b.onclick=function(){go(i)};dots.appendChild(b)})(i)}var multi=pages()>1;dots.style.display=multi?'':'none';$('#prev').style.display=$('#next').style.display=multi?'':'none';mark()}
   function mark(){$$('button',dots).forEach(function(b,i){b.classList.toggle('on',i===idx)})}
   function go(i){idx=(i+pages())%pages();tr.scrollTo({left:cards[idx].offsetLeft-tr.offsetLeft,behavior:'smooth'});mark()}
   tr.addEventListener('scroll',function(){var best=0,d=1e9;cards.forEach(function(c,i){var x=Math.abs(c.offsetLeft-tr.offsetLeft-tr.scrollLeft);if(x<d){d=x;best=i}});idx=Math.min(best,pages()-1);mark()},{passive:true});
