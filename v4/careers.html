@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Our Story | Euphoric Living Home Care</title>
-<meta name="description" content="The story behind Euphoric Living Home Care: person-centered, dignified in-home and community care in Greater Philadelphia, led by a founder who stays personally invested." />
+<title>Careers | Euphoric Living Home Care</title>
+<meta name="description" content="Careers at Euphoric Living Home Care: caregiver / PCA and PRN part-time opportunities supporting people at home across Greater Philadelphia." />
 <meta name="theme-color" content="#8d0f1f" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -364,6 +364,36 @@
     .pillars{grid-template-columns:1fr}
     .portrait{max-width:none;margin:0 18px 0 0}.portrait::before{inset:16px -16px -16px 16px}.portrait::after{right:-10px;top:-14px;width:52px;height:52px}
   }
+  /* careers page */
+  .cr-intro{padding:84px 0 24px;background:var(--paper)}
+  .cr-intro p.lead{font-family:"Playfair Display",Georgia,serif;font-size:clamp(22px,2.4vw,28px);line-height:1.45;color:var(--charcoal);border-left:3px solid var(--gold);padding-left:22px;max-width:860px}
+  .cr-intro .cta-btns{margin-top:30px}
+  .why{padding:70px 0 84px;background:var(--paper)}
+  .why h2,.roles h2,.quals h2{font-size:clamp(30px,3.8vw,44px);color:var(--charcoal);line-height:1.1}
+  .why h2 em,.roles h2 em,.quals h2 em{font-style:normal;color:var(--red)}
+  .why .pillars{margin-top:34px}
+  .roles{padding:84px 0;background:#f7e8cf;position:relative;overflow:hidden}
+  .roles::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,rgba(255,255,255,.55),transparent 45%)}
+  .roles .wrap{position:relative}
+  .roles .intro{max-width:640px;margin:14px 0 36px;color:#5a4a44;font-size:17px}
+  .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .role{background:#fff;border-radius:22px;padding:30px 28px;box-shadow:0 14px 34px rgba(105,9,26,.09);border-top:3px solid var(--gold);display:flex;flex-direction:column;gap:12px;transition:transform .35s,box-shadow .35s}
+  .role:hover{transform:translateY(-6px);box-shadow:0 24px 46px rgba(105,9,26,.16)}
+  .role .tag{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);background:#fbf3e6;border-radius:999px;padding:5px 12px}
+  .role h3{font-size:26px;color:var(--charcoal)}
+  .role p{color:var(--muted);font-size:15px}
+  .role ul{list-style:none;display:grid;gap:8px;margin:4px 0 8px}
+  .role li{display:flex;gap:10px;font-size:14.5px;color:#4a3f3f}
+  .role li svg{width:18px;height:18px;color:var(--gold-deep);flex:0 0 18px;margin-top:3px}
+  .role .btn{align-self:flex-start;margin-top:auto}
+  .quals{padding:84px 0;background:var(--paper)}
+  .qual-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 40px;margin-top:30px;max-width:980px}
+  .qual{display:flex;gap:14px;align-items:flex-start;padding:16px 4px;border-bottom:1px solid var(--line);font-size:16px;color:#4a3f3f}
+  .qual svg{width:24px;height:24px;color:var(--gold);flex:0 0 24px;margin-top:2px}
+  .quals .note-small{margin-top:22px;font-size:13.5px;color:var(--muted);max-width:760px}
+  .quals .cta-btns{margin-top:30px}
+  @media (max-width:980px){.role-grid,.qual-grid{grid-template-columns:1fr}.cr-intro{padding:60px 0 16px}}
+  @media (max-width:600px){.why,.roles,.quals{padding:56px 0}.role{padding:24px 20px}.role h3{font-size:23px}.cr-intro .cta-btns .btn,.quals .cta-btns .btn,.role .btn{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -374,11 +404,11 @@
     <a class="brand" href="index.html" aria-label="Euphoric Living Home Care"><img src="images/logo.png" alt="Euphoric Living Home Care logo" /></a>
     <nav class="links" aria-label="Main">
       <a href="index.html">Home</a>
-      <a class="on" href="about.html">About Us</a>
+      <a href="about.html">About Us</a>
       <a href="index.html#services">Our Services</a>
       <a href="index.html#programs">Programs Accepted</a>
       <a href="index.html#areas">Areas Served</a>
-      <a href="careers.html">Careers</a>
+      <a class="on" href="careers.html">Careers</a>
       <a href="index.html#process">Resources</a>
       <a href="index.html#areas">Contact</a>
     </nav>
@@ -399,54 +429,84 @@
 <section class="pg-hero">
   <img class="mark" src="images/logo-footer.png" alt="" aria-hidden="true" />
   <div class="wrap">
-    <p class="eyebrow rv">Our Story</p>
-    <h1 class="rv" style="--d:.08s">More Than Care.<em>A Higher Standard.</em></h1>
-    <p class="crumbs rv" style="--d:.16s"><a href="index.html">Home</a> &nbsp;/&nbsp; About Us</p>
+    <p class="eyebrow rv">Careers at Euphoric Living</p>
+    <h1 class="rv" style="--d:.08s">Make a Difference.<em>Build a Career You Feel Good About.</em></h1>
+    <p class="crumbs rv" style="--d:.16s"><a href="index.html">Home</a> &nbsp;/&nbsp; Careers</p>
   </div>
 </section>
 
-<!-- FOUNDER -->
-<section class="founder" id="founder">
-  <div class="wrap founder-grid">
-    <div class="portrait rv"><img src="images/founder.jpg" alt="KayDene Crowder, founder of Euphoric Living Home Care" loading="lazy" /></div>
-    <div class="rv" style="--d:.1s">
-      <p class="eyebrow">From Our Founder</p>
-      <h2>A Personal <em>Commitment</em></h2>
-      <p>As the founder of Euphoric Living Home Care, I wanted to build a company where quality care and genuine human connection could exist together.</p>
-      <p>I remain personally invested in the experience we provide—from welcoming new individuals and families to supporting our caregivers and ensuring that the standard behind the Euphoric Living name is reflected in the care we deliver.</p>
-      <p>As we continue to grow, that commitment will remain at the heart of who we are.</p>
-      <div class="sig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.6A4 4 0 0 1 12 8a4 4 0 0 1 7 2.4C19 15.6 12 20 12 20z"/></svg><div><b>KayDene Crowder</b><span>Founder, Euphoric Living Home Care</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- STORY -->
-<section class="story-sec" id="story">
-  <div class="wrap story-grid">
-    <div class="story-copy">
-      <p class="lead rv">Euphoric Living Home Care was founded with a simple belief: home care should be about more than completing a list of tasks. It should help people continue to live with dignity, comfort, independence, and joy.</p>
-      <p class="rv">From the beginning, our vision has been to create an experience where individuals and families feel heard, respected, and genuinely supported. We understand that inviting someone into your home—and trusting them with your care or the care of someone you love—is deeply personal. That trust is something we never take lightly.</p>
-      <p class="rv">At Euphoric Living Home Care, we take a person-centered approach to care. We look beyond a diagnosis, disability, age, or daily need and focus on the individual—their routines, preferences, goals, personality, and the life they want to continue living.</p>
-      <p class="rv">Our caregivers provide dependable support while encouraging independence and meaningful connection. Whether someone needs assistance with personal care, companionship, respite, homemaker services, community integration, or additional support at home, our goal is to make each person feel comfortable, valued, and respected.</p>
-    </div>
-    <aside class="story-side rv" style="--d:.1s">
-      <div class="ph"><img src="images/about-porch.jpg" alt="Caregiver in an Euphoric Living uniform sharing a warm moment with a senior on a garden porch" loading="lazy" style="object-position:56% 50%" />
-        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.6A4 4 0 0 1 12 8a4 4 0 0 1 7 2.4C19 15.6 12 20 12 20z"/></svg> Person-centered care, in the comfort of home</div></div>
-    </aside>
-  </div>
-</section>
-
-<!-- MEANING -->
-<section class="meaning" id="meaning">
+<!-- INTRO -->
+<section class="cr-intro">
   <div class="wrap">
-    <p class="eyebrow rv">Our Name</p>
-    <h2 class="rv">The Meaning Behind <em>Euphoric Living</em></h2>
-    <p class="intro rv">Euphoric Living is more than our name—it represents how we want people to feel.<br>Safe, supported, respected, and empowered to live life on their own terms.</p>
+    <p class="lead rv">Join a team committed to providing compassionate, dependable, person-centered support in the homes and communities we serve.</p>
+    <div class="cta-btns rv" style="--d:.1s">
+      <button class="btn btn-red" data-open="apply">Apply Now <span class="ar">→</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY JOIN US -->
+<section class="why" id="why">
+  <div class="wrap">
+    <p class="eyebrow rv">Why Join Us</p>
+    <h2 class="rv">Work That Matters, <em>A Team That Cares</em></h2>
     <div class="pillars">
-      <div class="pillar rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></div><h3>Safe &amp; Comfortable</h3><p>Feeling secure and at ease in the place you call home.</p></div>
-      <div class="pillar rv" style="--d:.08s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.5" r="2.3"/><path d="M12 8v6M7 10l5 1 5-1M9.5 21l2.5-7 2.5 7"/></svg></div><h3>Independence</h3><p>Supporting you in doing as much for yourself as possible.</p></div>
-      <div class="pillar rv" style="--d:.16s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/></svg></div><h3>Dignity &amp; Choice</h3><p>Respecting your preferences, routines, voice, and decisions.</p></div>
-      <div class="pillar rv" style="--d:.24s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.8"/><circle cx="16.5" cy="9" r="2.4"/><path d="M3 19c.8-3 2.6-4.5 5-4.5s4.2 1.5 5 4.5M14 15c2.4-.3 4.3.8 5.3 4"/></svg></div><h3>Joy &amp; Connection</h3><p>Creating meaningful moments, relationships, and experiences that make life fulfilling.</p></div>
+      <div class="pillar rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.6A4 4 0 0 1 12 8a4 4 0 0 1 7 2.4C19 15.6 12 20 12 20z"/></svg></div><h3>Meaningful Work</h3><p>Help people keep living with dignity, comfort, independence, and joy.</p></div>
+      <div class="pillar rv" style="--d:.08s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></div><h3>Person-Centered Care</h3><p>Get to know the individual, not just the task list.</p></div>
+      <div class="pillar rv" style="--d:.16s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/></svg></div><h3>A Supported Team</h3><p>Our founder stays personally invested in supporting our caregivers.</p></div>
+      <div class="pillar rv" style="--d:.24s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.8"/><circle cx="16.5" cy="9" r="2.4"/><path d="M3 19c.8-3 2.6-4.5 5-4.5s4.2 1.5 5 4.5M14 15c2.4-.3 4.3.8 5.3 4"/></svg></div><h3>Community Connection</h3><p>Support people at home and out in their communities.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT OPPORTUNITIES -->
+<section class="roles" id="opportunities">
+  <div class="wrap">
+    <p class="eyebrow rv">Current Opportunities</p>
+    <h2 class="rv">Find Your <em>Role</em></h2>
+    <p class="intro rv">We are hiring caregivers across Montgomery, Philadelphia, Chester, Bucks, Delaware, Dauphin, Lancaster and Lebanon counties.</p>
+    <div class="role-grid">
+      <article class="role rv">
+        <span class="tag">Caregiver / PCA</span>
+        <h3>Caregiver / Personal Care Aide</h3>
+        <p>Provide personal assistance, companionship and homemaker support to people in their own homes.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Personal care and daily living support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Companionship and meaningful engagement</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Light homemaker help for a safe, comfortable home</li>
+        </ul>
+        <button class="btn btn-red" data-open="apply" data-position="Caregiver / PCA">Apply Now <span class="ar">→</span></button>
+      </article>
+      <article class="role rv" style="--d:.1s">
+        <span class="tag">PRN / Part-Time</span>
+        <h3>PRN / Part-Time Caregiver</h3>
+        <p>Flexible, as-needed and part-time shifts supporting individuals and families across our service area.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg> Shifts that fit around your schedule</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Same person-centered standard of care</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> A good fit alongside school, family or other work</li>
+        </ul>
+        <button class="btn btn-red" data-open="apply" data-position="PRN / Part-Time Caregiver">Apply Now <span class="ar">→</span></button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BASIC QUALIFICATIONS -->
+<section class="quals" id="qualifications">
+  <div class="wrap">
+    <p class="eyebrow rv">Basic Qualifications</p>
+    <h2 class="rv">What We’re <em>Looking For</em></h2>
+    <div class="qual-grid">
+      <div class="qual rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Compassion and respect for older adults and people with disabilities</div>
+      <div class="qual rv" style="--d:.06s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Dependable, punctual and able to follow a care plan</div>
+      <div class="qual rv" style="--d:.12s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Clear, kind communication with clients and families</div>
+      <div class="qual rv" style="--d:.18s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Able to complete the background checks and clearances required for the role</div>
+      <div class="qual rv" style="--d:.24s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Legally authorized to work in the United States</div>
+      <div class="qual rv" style="--d:.3s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Prior caregiving experience or certification is a plus</div>
+    </div>
+    <div class="cta-btns rv" style="--d:.1s">
+      <button class="btn btn-red" data-open="apply">Apply Now <span class="ar">→</span></button>
     </div>
   </div>
 </section>
@@ -455,11 +515,9 @@
 <section class="closing">
   <div class="wrap">
     <div class="heart rv">♥</div>
-    <h2 class="rv" style="--d:.08s">Because we don’t just provide care — <em>we create Euphoric Living.</em></h2>
+    <h2 class="rv" style="--d:.08s">Ready to Make a Difference? <em>Join Our Team.</em></h2>
     <div class="cta-btns rv" style="--d:.16s">
-      <button class="btn btn-red" data-open>Get Started With Care <span class="ar">→</span></button>
-      <button class="btn btn-line" data-open="refer">Refer Someone for Care</button>
-      <button class="btn btn-line" data-open>Join Our Team</button>
+      <button class="btn btn-red" data-open="apply">Apply Now <span class="ar">→</span></button>
     </div>
   </div>
 </section>
@@ -468,7 +526,7 @@
   <div class="wrap">
     <div class="foot">
       <div><span class="logochip"><img src="images/logo-footer.png" alt="Euphoric Living Home Care" /></span></div>
-      <nav aria-label="Footer"><a href="index.html">Home</a><a class="on" href="about.html">About Us</a><a href="index.html#services">Our Services</a><a href="index.html#programs">Programs</a><a href="careers.html">Careers</a><a href="index.html#process">Resources</a><a href="index.html#contact">Contact</a></nav>
+      <nav aria-label="Footer"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="index.html#services">Our Services</a><a href="index.html#programs">Programs</a><a href="careers.html">Careers</a><a href="index.html#process">Resources</a><a href="index.html#contact">Contact</a></nav>
       <div class="ct">
         <a href="tel:2673691999">☎ (267) 369-1999</a>
         <a href="mailto:info@euphoriclivinghc.com">✉ info@euphoriclivinghc.com</a>
@@ -564,6 +622,58 @@
   </div>
 </dialog>
 
+<dialog id="dlgApply" class="wide">
+  <div class="dlg">
+    <button class="x" aria-label="Close" onclick="document.getElementById('dlgApply').close()">×</button>
+    <h3>Apply to Join Our Team</h3>
+    <p class="lead">Tell us a little about yourself and the role you’re interested in. Our team will review your application and follow up.</p>
+    <form id="applyForm">
+      <div class="row2">
+        <input name="afirst" placeholder="First name" required autocomplete="given-name" />
+        <input name="alast" placeholder="Last name" required autocomplete="family-name" />
+      </div>
+      <div class="row2">
+        <input name="aphone" type="tel" placeholder="Phone" required autocomplete="tel" />
+        <input name="aemail" type="email" placeholder="Email" required autocomplete="email" />
+      </div>
+      <div class="row2">
+        <input name="acity" placeholder="City" autocomplete="address-level2" />
+        <select name="acounty" aria-label="County">
+          <option value="">County</option>
+          <option>Montgomery</option><option>Philadelphia</option><option>Chester</option><option>Bucks</option>
+          <option>Delaware</option><option>Dauphin</option><option>Lancaster</option><option>Lebanon</option><option>Other</option>
+        </select>
+      </div>
+      <select name="aposition" id="aposition" aria-label="Position of interest" required>
+        <option value="">Position of interest</option>
+        <option>Caregiver / PCA</option>
+        <option>PRN / Part-Time Caregiver</option>
+        <option>Either / Not sure</option>
+      </select>
+      <div class="row2">
+        <select name="acert" aria-label="Certification">
+          <option value="">Certification (if any)</option>
+          <option>CNA</option><option>HHA</option><option>PCA</option><option>Other</option><option>None yet</option>
+        </select>
+        <select name="aexp" aria-label="Caregiving experience">
+          <option value="">Caregiving experience</option>
+          <option>Less than 1 year</option><option>1–2 years</option><option>3–5 years</option><option>5+ years</option>
+        </select>
+      </div>
+      <input name="aavail" placeholder="Availability (days / shifts you can work)" />
+      <div class="row2">
+        <label class="f"><span>Authorized to work in the U.S.?</span><select name="aauth" aria-label="Legally authorized to work in the United States" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+        <label class="f"><span>Reliable transportation?</span><select name="atransport" aria-label="Reliable transportation" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+      </div>
+      <label class="f"><span>Able to complete required background checks?</span><select name="abg" aria-label="Able to complete required background checks" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+      <label class="f"><span>Resume <small>(optional)</small></span><input name="aresume" type="file" accept=".pdf,.doc,.docx" /></label>
+      <textarea name="awhy" placeholder="Why are you interested in joining Euphoric Living?"></textarea>
+      <button class="btn btn-red" type="submit" style="justify-content:center">Submit Application <span class="ar">→</span></button>
+      <p class="note" id="anote">Preview only — this application does not send yet.</p>
+    </form>
+  </div>
+</dialog>
+
 <script>
 (function(){
   var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
@@ -579,9 +689,12 @@
     $$('.rv').forEach(function(el){io.observe(el)});
   } else {$$('.rv').forEach(function(el){el.classList.add('in')})}
   var dlg=$('#dlg');
-  $$('[data-open]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();closeMenu();var d=document.getElementById(b.dataset.open==='refer'?'dlgRef':'dlg');if(d.showModal)d.showModal()})});
+  $$('[data-open]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();closeMenu();var k=b.dataset.open;var d=document.getElementById(k==='refer'?'dlgRef':(k==='apply'?'dlgApply':'dlg'));if(k==='apply'){var ps=document.getElementById('aposition');if(ps){ps.value=b.dataset.position||'';}}if(d.showModal)d.showModal()})});
   var dlgRef=$('#dlgRef');
   dlgRef.addEventListener('click',function(e){if(e.target===dlgRef)dlgRef.close()});
+  var dlgApply=$('#dlgApply');
+  dlgApply.addEventListener('click',function(e){if(e.target===dlgApply)dlgApply.close()});
+  $('#applyForm').addEventListener('submit',function(e){e.preventDefault();$('#anote').textContent='Thank you! Preview only \u2014 nothing was sent.'});
   $('#refForm').addEventListener('submit',function(e){e.preventDefault();$('#rnote').textContent='Thank you! Preview only — nothing was sent.'});
   dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
   $('#form').addEventListener('submit',function(e){e.preventDefault();$('#fnote').textContent='Thank you! Preview only — nothing was sent.'});
