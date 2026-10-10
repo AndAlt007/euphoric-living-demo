@@ -92,6 +92,8 @@
             width: 100%;
         }
 
+        .hero h1 br.m { display: none; }
+
         /* Burger button (hidden on desktop) */
         .burger {
             display: none;
@@ -549,7 +551,9 @@
 
             .hero { min-height: auto; padding: 50px 8px; }
             .hero h1 { font-size: 30px; line-height: 1.2; margin-bottom: 20px; }
-            .hero h1 br { display: none; }
+            /* phone headline: "Building the Bridge / to the Next Generation / of Black Divers" */
+            .hero h1 br.d { display: none; }
+            .hero h1 br.m { display: inline; }
             .hero-content { padding: 0 8px; }
 
             /* stack the values vertically, drop the | dividers */
@@ -557,7 +561,27 @@
             .hero-value-text { font-size: 16px; justify-content: center; text-align: center; }
             .hero-value-text:not(:last-child)::after { display: none; }
 
-            .hero-buttons { flex-direction: column; align-items: stretch; gap: 14px; }
+            /* two smaller buttons on one line; bottoms stay where the stacked 2nd button's bottom was */
+            .hero-buttons {
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 10px;
+                min-height: 118px;
+                padding: 0 4px;
+            }
+            .hero-buttons .btn {
+                flex: 1 1 0;
+                min-width: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 42px;
+                padding: 0 6px;
+                font-size: 11px;
+                letter-spacing: 0;
+                white-space: nowrap;
+            }
             .btn { padding: 13px 16px; font-size: 15px; text-align: center; }
 
             .hub-section { padding: 36px 14px 40px; }
@@ -756,7 +780,7 @@
         <div class="hero-overlay"></div>
 
         <div class="container hero-content">
-            <h1>Building the Bridge to<br>the Next Generation of Black Divers</h1>
+            <h1>Building the Bridge<br class="m"> to<br class="d"> the Next Generation<br class="m"> of Black Divers</h1>
             
             <div class="hero-values">
                 <div class="hero-value-text">Intentionally Lowering Barriers</div>
