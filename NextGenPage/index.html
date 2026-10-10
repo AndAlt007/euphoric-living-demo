@@ -550,10 +550,13 @@
             .logo { height: 46px; }
 
             .hero { min-height: auto; padding: 50px 8px; }
-            .hero h1 { font-size: 30px; line-height: 1.2; margin-bottom: 20px; }
-            /* phone headline: "Building the Bridge / to the Next Generation / of Black Divers" */
+            .hero h1 { font-size: clamp(32px, 11.5vw, 52px); line-height: 1.12; margin-bottom: 22px; }
+            /* phone headline: "Building the / Bridge to the / Next Generation / of Black Divers" */
             .hero h1 br.d { display: none; }
             .hero h1 br.m { display: inline; }
+            /* like the team shirt: bright blue top two lines (a bit larger), gold bottom two lines */
+            .hero h1 .hl-a { color: #48a6b9; font-size: 1.12em; }
+            .hero h1 .hl-b { color: #c5a059; }
             .hero-content { padding: 0 8px; }
 
             /* stack the values vertically, drop the | dividers */
@@ -566,21 +569,25 @@
                 flex-direction: row;
                 align-items: flex-end;
                 justify-content: center;
-                gap: 10px;
+                gap: 8px;
                 min-height: 118px;
-                padding: 0 4px;
+                margin: 0 -8px;
+                padding: 0;
             }
+            .hero-buttons .br { display: none; } /* drop the [ ] on phones so the text can be bigger */
             .hero-buttons .btn {
                 flex: 1 1 0;
                 min-width: 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 42px;
-                padding: 0 6px;
-                font-size: 11px;
+                height: 54px;
+                padding: 0 2px;
+                font-size: clamp(11px, 4vw, 17px);
+                line-height: 1.1;
                 letter-spacing: 0;
                 white-space: nowrap;
+                overflow: hidden;
             }
             .btn { padding: 13px 16px; font-size: 15px; text-align: center; }
 
@@ -780,7 +787,7 @@
         <div class="hero-overlay"></div>
 
         <div class="container hero-content">
-            <h1>Building the Bridge<br class="m"> to<br class="d"> the Next Generation<br class="m"> of Black Divers</h1>
+            <h1><span class="hl-a">Building the<br class="m"> Bridge to<br class="d"> the</span><br class="m"> <span class="hl-b">Next Generation<br class="m"> of Black Divers</span></h1>
             
             <div class="hero-values">
                 <div class="hero-value-text">Intentionally Lowering Barriers</div>
@@ -789,8 +796,8 @@
             </div>
 
             <div class="hero-buttons">
-                <a href="https://memberplanet.com/Groups/GroupJoinLoginNew.aspx?ISPUB=true&invitee=s23m2790515yf" target="_blank" rel="noopener noreferrer" class="btn">[ JOIN THE MOVEMENT ]</a>
-                <a href="https://www.memberplanet.com/campaign/nabs/communitydonating_255" target="_blank" rel="noopener noreferrer" class="btn">[ GIVE THE GIFT OF SCUBA ]</a>
+                <a href="https://memberplanet.com/Groups/GroupJoinLoginNew.aspx?ISPUB=true&invitee=s23m2790515yf" target="_blank" rel="noopener noreferrer" class="btn"><span class="br">[ </span>JOIN THE MOVEMENT<span class="br"> ]</span></a>
+                <a href="https://www.memberplanet.com/campaign/nabs/communitydonating_255" target="_blank" rel="noopener noreferrer" class="btn"><span class="br">[ </span>GIVE THE GIFT OF SCUBA<span class="br"> ]</span></a>
             </div>
         </div>
     </section>
