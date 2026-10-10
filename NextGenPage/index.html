@@ -588,7 +588,8 @@
                 justify-content: center;
                 gap: 8px;
                 min-height: 118px;
-                margin: 0 -8px;
+                margin: 0 auto;
+                width: calc(100% - 10px); /* buttons sit ~5px inside each edge of the title */
                 padding: 0;
             }
             .hero-buttons .br { display: none; } /* drop the [ ] on phones so the text can be bigger */
@@ -929,7 +930,7 @@
             function fit() {
                 var box = document.querySelector('.mob-title');
                 if (!box || getComputedStyle(box).display === 'none') return;
-                var target = box.clientWidth - 4;
+                var target = box.clientWidth;
                 var lines = box.querySelectorAll('.fit');
                 for (var i = 0; i < lines.length; i++) {
                     lines[i].style.fontSize = '100px';
