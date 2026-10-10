@@ -925,11 +925,36 @@
     </script>
 
     <script>
-        /* Fit each phone-headline line to the same width */
+        /* Phone fitting: headline lines + hero buttons are re-measured after the web fonts load,
+           so sizes are identical on every load/refresh and the button text never touches the border */
         (function () {
+            /* real text width at 100px, measured on a detached inline probe (flex boxes shrink-wrap ranges) */
+            function textWidth(el) {
+                var cs = getComputedStyle(el);
+                var label = '';
+                for (var n = el.firstChild; n; n = n.nextSibling) {
+                    if (n.nodeType === 3) label += n.nodeValue;
+                    else if (n.nodeType === 1 && getComputedStyle(n).display !== 'none') label += n.textContent;
+                }
+                var p = document.createElement('span');
+                p.textContent = label.replace(/\s+/g, ' ').trim();
+                p.style.cssText = 'position:absolute;left:-9999px;top:0;visibility:hidden;white-space:nowrap;font-size:100px;' +
+                    'font-family:' + cs.fontFamily + ';font-weight:' + cs.fontWeight + ';letter-spacing:' + cs.letterSpacing +
+                    ';text-transform:' + cs.textTransform;
+                document.body.appendChild(p);
+                var w = p.getBoundingClientRect().width;
+                document.body.removeChild(p);
+                return w;
+            }
             function fit() {
                 var box = document.querySelector('.mob-title');
-                if (!box || getComputedStyle(box).display === 'none') return;
+                var btns = document.querySelectorAll('.hero-buttons .btn');
+                var phone = box && getComputedStyle(box).display !== 'none';
+                if (!phone) {
+                    for (var k = 0; k < btns.length; k++) btns[k].style.fontSize = '';
+                    return;
+                }
+                /* headline: every line the same width */
                 var target = box.clientWidth;
                 var lines = box.querySelectorAll('.fit');
                 for (var i = 0; i < lines.length; i++) {
@@ -937,11 +962,33 @@
                     var w = lines[i].getBoundingClientRect().width;
                     if (w > 0) lines[i].style.fontSize = Math.min(100 * target / w, 64) + 'px';
                 }
+                /* hero buttons: one shared size, text fills the narrowest button minus an 8px gap each side */
+                var best = 16;
+                for (var b = 0; b < btns.length; b++) {
+                    var cs = getComputedStyle(btns[b]);
+                    var avail = btns[b].clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 16;
+                    btns[b].style.fontSize = '100px';
+                    var tw = textWidth(btns[b]);
+                    if (tw > 0) best = Math.min(best, 100 * avail / tw);
+                }
+                for (var c = 0; c < btns.length; c++) btns[c].style.fontSize = best + 'px';
             }
+            var t;
+            function later() { clearTimeout(t); t = setTimeout(fit, 60); }
             window.addEventListener('load', fit);
-            window.addEventListener('resize', fit);
-            window.addEventListener('orientationchange', fit);
-            if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+            window.addEventListener('resize', later);
+            window.addEventListener('orientationchange', later);
+            if (document.fonts) {
+                document.fonts.addEventListener && document.fonts.addEventListener('loadingdone', fit);
+                if (document.fonts.load) {
+                    Promise.all([
+                        document.fonts.load("700 20px 'Barlow Semi Condensed'"),
+                        document.fonts.load("600 20px 'Barlow Semi Condensed'"),
+                        document.fonts.load("700 20px 'Oswald'")
+                    ]).then(fit, fit);
+                }
+                if (document.fonts.ready) document.fonts.ready.then(fit);
+            }
             fit();
         })();
     </script>
