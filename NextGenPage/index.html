@@ -779,6 +779,49 @@
             .eco-banner p { font-size: 13px; line-height: 1.4; max-width: 100%; margin-bottom: 16px; }
             .eco-banner .btn { width: 100%; max-width: none; margin-top: auto; padding: 10px 6px; font-size: 11px; letter-spacing: 0.5px; line-height: 1.25; }
         }
+
+        /* --- ECOSYSTEM: breathing room + ocean wave into the footer (all screen sizes) --- */
+        @media screen {
+            .ecosystem-section {
+                position: relative;
+                overflow: hidden;
+                padding: 44px 0 110px;
+                background: linear-gradient(180deg, #f8fafc 0%, #d4f3f8 45%, #8fdcea 100%);
+            }
+            .eco-banners { position: relative; z-index: 1; gap: 12px; padding: 0 14px; }
+            .eco-banner { border-radius: 18px; box-shadow: 0 12px 26px rgba(0, 50, 80, 0.28), 0 3px 0 rgba(255,255,255,0.25) inset; }
+            .ecosystem-section::before,
+            .ecosystem-section::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                pointer-events: none;
+            }
+            /* back wave: lighter ocean blue */
+            .ecosystem-section::before {
+                bottom: 0;
+                height: 96px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100' preserveAspectRatio='none'%3E%3Cpath d='M0 38C150 8 300 70 500 42S850 6 1000 40 1150 58 1200 36V100H0Z' fill='%2300acc1' fill-opacity='0.55'/%3E%3C/svg%3E");
+            }
+            /* front wave: footer navy, so the page flows into the footer */
+            .ecosystem-section::after {
+                bottom: -1px;
+                height: 70px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100' preserveAspectRatio='none'%3E%3Cpath d='M0 52C200 90 380 8 620 46S1000 88 1200 40V100H0Z' fill='%23051024'/%3E%3C/svg%3E");
+            }
+        }
+
+        /* desktop: keep the cards a comfortable width and centered, a bit more air */
+        @media (min-width: 901px) {
+            .ecosystem-section { padding: 60px 0 150px; }
+            .eco-banners { max-width: 1100px; margin: 0 auto; padding: 0 24px; gap: 28px; }
+            .eco-banner { padding: 60px 30px; }
+            .ecosystem-section::before { height: 130px; }
+            .ecosystem-section::after { height: 95px; }
+        }
     </style>
 </head>
 <body>
@@ -903,7 +946,7 @@
         </div>
         <div class="footer-contact">
             <p>Email: <a href="mailto:NextGen@nabsdivers.org" target="_blank" rel="noopener noreferrer">NextGen@nabsdivers.org</a></p>
-            <p class="copy">Copyright © 2025 NextGen, Inc.</p>
+            <p class="copy">© 2026 N.A.B.S. NextGen</p>
         </div>
     </footer>
 
